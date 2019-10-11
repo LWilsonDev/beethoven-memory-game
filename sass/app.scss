@@ -1,0 +1,289 @@
+@import "_variables";
+@import "_mixins";
+@import "animate-sass/animate";
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Gaegu');
+
+html body {
+  min-height: 100%;
+  min-width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #08c6f3;
+}
+
+.page-wrapper {
+  @include display(flex);
+  flex-direction: column;
+  text-align: center;
+  font-family: $main-font;
+  background-color: #08c6f3;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%; 
+  overflow:hidden;
+}
+
+.title-text {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.title {
+  font-family: $header-font;
+  font-size: 40px;
+  @media (min-width: $tablet-width){
+    font-size: 5vw;
+  }
+}
+
+.buttonsAndCounter {
+  flex: 0 0 8rem;
+  @media (min-width: $tablet-width) {
+    @include order(1);
+    min-width: 20vw;
+    margin-left: 40px;
+  }
+  @include order(2);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main {
+  @media (min-width: $tablet-width) {
+    @include display(flex);
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 40px;
+  }
+  margin-bottom: 100px;
+}
+
+.game {
+  flex: 1 1 auto;
+  @media (min-width: $tablet-width) {
+    @include order(2);
+   width: 60vw;
+  }
+  
+}
+.deck {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5%;
+  position: relative;
+  perspective: 800px;
+  margin: 0 auto;
+  width: 90%;
+  height: 60vh;
+  @media (min-width: $desktop-width){
+    height: 70vh;
+  }
+} 
+
+.instructions {
+  @media (min-width: $tablet-width) {
+    flex: 0 0 auto;
+    @include order(3);
+    width: 20vw;
+    margin-right: 40px;
+  }
+  @include order(1);
+  text-align: center;
+  margin: 0 10px;
+}
+
+.instructions-title {
+  font-size: $small-header;
+}
+
+.list {
+  list-style-type: none;
+  line-height: 1.5;
+  font-size: $text-block-size;
+  padding: 0;
+}
+
+.list-item {
+  margin-bottom: 15px;
+}
+
+.counter-text {
+  font-size: $small-header;
+  position: relative;
+}
+
+.counter {
+  font-family: $main-font;
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.notation-1 {
+  @include notation("../assets/symphony_1/01.png")
+}
+
+.notation-2 {
+  @include notation("../assets/symphony_1/02.png")
+}
+
+.notation-3 {
+  @include notation("../assets/symphony_1/03.png")
+}
+
+.notation-4 {
+  @include notation("../assets/symphony_1/04.png")
+}
+
+.notation-5 {
+  @include notation("../assets/symphony_1/05.png")
+}
+
+.notation-6 {
+  @include notation("../assets/symphony_1/06.png")
+}
+
+.plainFront {
+  background-color: white;
+}
+
+.card {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  @include border-radius(20px);
+  box-shadow: -5px 5px #000;
+}
+
+.faceDown {
+  background-image: url("../assets/images/Beethoven.png");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-color: #c7c7c7;
+  background-position: center;
+  border: 2px solid black;
+}
+
+.spinBack {
+  @include rotateY(180deg);
+}
+
+.back {
+  border: 2px solid black;
+}
+
+.flipped {
+  @include rotateY(180deg);
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+%btn {
+  width: 80px;
+  height: 40px;
+  @include border-radius(10px);
+  box-shadow: -8px 5px #000;
+  padding: 0px;
+  margin: 6px;
+  font-family: $main-font;
+  text-align: center;
+  font-size: 20px;
+  border: 2px solid black;
+  transition: all 0.2s ease-in-out;
+  @media (min-width: $tablet-width) {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    height: 40px;
+    
+  }
+}
+
+%btn:hover {
+  opacity: 0.6;
+}
+
+.easy-btn {
+  @extend %btn;
+  background-color: $yellow;
+}
+
+button:active,
+button:focus {
+  outline: 0;
+}
+
+.hard-btn {
+  @extend %btn;
+  background-color: $purple;
+}
+
+.active {
+  box-shadow: -1px 1px #000;
+  top: 4px;
+  opacity: 0.6;
+}
+
+.reset-btn {
+  @extend %btn;
+  background-color: $green;
+}
+
+.reset-btn:active {
+  box-shadow: -1px 1px #000;
+  top: 4px;
+}
+
+.win-pop-up {
+  background-color: $yellow;
+  @include border-radius(20px);
+  border: 2px solid black;
+  width: 300px; 
+  height: 300px; 
+  margin: 40px auto;
+  z-index: 5; 
+  cursor: pointer; 
+  position: fixed;
+	top: 80px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.win-title {
+  font-family: $header-font;
+  font-size: 40px;
+}
+
+.final-counter-text {
+  margin-top: 0;
+  font-size: $small-header;
+}
+
+.play-btn {
+  @extend %btn;
+  background-color: $green;
+  width: 120px;
+}
+
+.play-btn:active {
+  box-shadow: -1px 1px #000;
+  top: 4px;
+}

@@ -1,0 +1,495 @@
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Daniel Eden
+*/
+@import url("https://fonts.googleapis.com/css?family=Bungee+Shade|Gaegu");
+body {
+  -webkit-backface-visibility: hidden;
+}
+
+.animated {
+  -webkit-animation-duration: calc( 1s );
+  animation-duration: calc( 1s );
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+.animated.hinge {
+  -webkit-animation-duration: calc( 1s * 2 );
+  animation-duration: calc( 1s * 2 );
+}
+.animated.bounceIn, .animated.bounceOut {
+  -webkit-animation-duration: calc( 1s * 0.75 );
+  animation-duration: calc( 1s * 0.75 );
+}
+.animated.flipOutX, .animated.flipOutY {
+  -webkit-animation-duration: calc( 1s * 0.75 );
+  animation-duration: calc( 1s * 0.75 );
+}
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+  }
+}
+@keyframes tada {
+  0% {
+    transform: scale(1);
+  }
+  10%, 20% {
+    transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+  }
+  80% {
+    -webkit-transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(30px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+
+@-webkit-keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+  }
+}
+@keyframes bounceOutLeft {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+}
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft;
+}
+
+html body {
+  min-height: 100%;
+  min-width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #08c6f3;
+}
+
+.page-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Gaegu", cursive;
+  background-color: #08c6f3;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.title-text {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.title {
+  font-family: "Bungee Shade", cursive;
+  font-size: 40px;
+}
+@media (min-width: 768px) {
+  .title {
+    font-size: 5vw;
+  }
+}
+
+.buttonsAndCounter {
+  flex: 0 0 8rem;
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  -webkit-order: 2;
+  order: 2;
+  text-align: center;
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .buttonsAndCounter {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    min-width: 20vw;
+    margin-left: 40px;
+  }
+}
+
+.main {
+  margin-bottom: 100px;
+}
+@media (min-width: 768px) {
+  .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 40px;
+  }
+}
+
+.game {
+  flex: 1 1 auto;
+}
+@media (min-width: 768px) {
+  .game {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+    width: 60vw;
+  }
+}
+
+.deck {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5%;
+  position: relative;
+  perspective: 800px;
+  margin: 0 auto;
+  width: 90%;
+  height: 60vh;
+}
+@media (min-width: 1024px) {
+  .deck {
+    height: 70vh;
+  }
+}
+
+.instructions {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -ms-flex-order: 1;
+  -webkit-order: 1;
+  order: 1;
+  text-align: center;
+  margin: 0 10px;
+}
+@media (min-width: 768px) {
+  .instructions {
+    flex: 0 0 auto;
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+    width: 20vw;
+    margin-right: 40px;
+  }
+}
+
+.instructions-title {
+  font-size: 24px;
+}
+
+.list {
+  list-style-type: none;
+  line-height: 1.5;
+  font-size: 18px;
+  padding: 0;
+}
+
+.list-item {
+  margin-bottom: 15px;
+}
+
+.counter-text {
+  font-size: 24px;
+  position: relative;
+}
+
+.counter {
+  font-family: "Gaegu", cursive;
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.notation-1 {
+  background-color: white;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("../assets/symphony_1/01.png");
+  background-repeat: no-repeat;
+}
+
+.notation-2 {
+  background-color: white;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("../assets/symphony_1/02.png");
+  background-repeat: no-repeat;
+}
+
+.notation-3 {
+  background-color: white;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("../assets/symphony_1/03.png");
+  background-repeat: no-repeat;
+}
+
+.notation-4 {
+  background-color: white;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("../assets/symphony_1/04.png");
+  background-repeat: no-repeat;
+}
+
+.notation-5 {
+  background-color: white;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("../assets/symphony_1/05.png");
+  background-repeat: no-repeat;
+}
+
+.notation-6 {
+  background-color: white;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("../assets/symphony_1/06.png");
+  background-repeat: no-repeat;
+}
+
+.plainFront {
+  background-color: white;
+}
+
+.card {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  box-shadow: -5px 5px #000;
+}
+
+.faceDown {
+  background-image: url("../assets/images/Beethoven.png");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-color: #c7c7c7;
+  background-position: center;
+  border: 2px solid black;
+}
+
+.spinBack {
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.back {
+  border: 2px solid black;
+}
+
+.flipped {
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.play-btn, .reset-btn, .hard-btn, .easy-btn {
+  width: 80px;
+  height: 40px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: -8px 5px #000;
+  padding: 0px;
+  margin: 6px;
+  font-family: "Gaegu", cursive;
+  text-align: center;
+  font-size: 20px;
+  border: 2px solid black;
+  transition: all 0.2s ease-in-out;
+}
+@media (min-width: 768px) {
+  .play-btn, .reset-btn, .hard-btn, .easy-btn {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    height: 40px;
+  }
+}
+
+.play-btn:hover, .reset-btn:hover, .hard-btn:hover, .easy-btn:hover {
+  opacity: 0.6;
+}
+
+.easy-btn {
+  background-color: #fcfc28;
+}
+
+button:active,
+button:focus {
+  outline: 0;
+}
+
+.hard-btn {
+  background-color: #cb51f7;
+}
+
+.active {
+  box-shadow: -1px 1px #000;
+  top: 4px;
+  opacity: 0.6;
+}
+
+.reset-btn {
+  background-color: #42f445;
+}
+
+.reset-btn:active {
+  box-shadow: -1px 1px #000;
+  top: 4px;
+}
+
+.win-pop-up {
+  background-color: #fcfc28;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  border: 2px solid black;
+  width: 300px;
+  height: 300px;
+  margin: 40px auto;
+  z-index: 5;
+  cursor: pointer;
+  position: fixed;
+  top: 80px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.win-title {
+  font-family: "Bungee Shade", cursive;
+  font-size: 40px;
+}
+
+.final-counter-text {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.play-btn {
+  background-color: #42f445;
+  width: 120px;
+}
+
+.play-btn:active {
+  box-shadow: -1px 1px #000;
+  top: 4px;
+}
+
+/*# sourceMappingURL=app.css.map */

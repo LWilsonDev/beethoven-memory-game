@@ -1,0 +1,35 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin display($display){
+  display: -webkit-box;  
+  display: -ms-flexbox;  
+  display: -webkit-flex; 
+  display: flex;         
+}
+
+@mixin rotateY($degrees){
+  -moz-transform: rotateY($degrees);
+  -o-transform: rotateY($degrees);
+  -webkit-transform: rotateY($degrees);
+  -ms-transform: rotateY($degrees);
+  transform: rotateY($degrees); 
+}
+
+@mixin order($order){
+   -webkit-box-ordinal-group: ($order);  
+  -moz-box-ordinal-group: ($order);     
+  -ms-flex-order: ($order);     
+  -webkit-order: ($order);  
+  order: ($order);
+}
+
+@mixin notation($img){
+  background-color: white;
+  background-position: center;
+  background-size: 100%;
+  background-image: url($img);
+  background-repeat: no-repeat;
+}
