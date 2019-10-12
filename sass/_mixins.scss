@@ -29,7 +29,7 @@
 @mixin notation($img){
   background-color: white;
   background-position: center;
-  background-size: 100%;
+  background-size: 90%;
   background-image: url($img);
   background-repeat: no-repeat;
 }

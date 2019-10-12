@@ -1,6 +1,69 @@
 $(document).ready(function() {
+
+  load_lang();
   startGame();
+  
+  
+
+
 });
+
+
+function load_lang() {
+
+  var $dropdown = $("#country_select");    
+  $.each(LanguageList, function(key, value) {
+    $dropdown.
+      append($("<option/>").
+      val(key).
+      text(value));
+    });
+  var location = checkLocation();
+  if(location == 'DEU'){
+    loadsLanguage("DEU");
+    
+    $dropdown.find('option:contains("Deutch")').attr("selected",true);
+    $dropdown.find('option:contains("English")').removeAttr("selected",true);
+  } else {
+    loadsLanguage("EN");
+    
+    $dropdown.find('option:contains("English")').attr("selected",true);
+    $dropdown.find('option:contains("Deutch")').removeAttr("selected",true);
+    
+  }
+  
+}
+
+
+function loadsLanguage(lang){
+  addSelected(lang);
+  /*fills all the span tags with class=lang pattern*/ 
+  $('span[class^="lang"]').each(function(){
+
+    var LangVar = (this.className).replace('lang-','');
+    var Text = window["text_"+lang][LangVar];
+    $(this).text(Text);        
+  });
+}
+
+function addSelected(lang){
+  var $dropdown = $("#country_select");  
+  $dropdown.find('option[value="{$lang}"]').attr("selected",true); 
+  
+  $dropdown.find(!'option[value="{$lang}"]').removeAttr("selected",true);
+}
+
+
+
+function checkLocation(){
+  $.get("https://ipinfo.io", function(response) {
+  var country = response.country;
+  console.log(country);
+  
+  return country;
+});
+
+}
 
 
 //VARIABLES
@@ -63,9 +126,12 @@ $(".play-btn").on("click", function() {
 
 
 //add event listeners to display cards on click and add selected class
-$('.card').on('click', function() {
-  $(this).addClass('flipped selected disabled');
-  //play sounds
+$('.card').on('click', function(e) {
+  e.preventDefault();
+  if($('.selected').length <2){
+    $(this).addClass('flipped selected disabled');
+  }
+  
   
 let cardIndex = $(this).data('card-index');
 switch(cardIndex) {
@@ -112,7 +178,7 @@ function reset() {
   $('.deck').children().removeClass().removeAttr('data').removeData();
   //add animation to spin over cards and remove existing color class
   $('.back').addClass('spinBack').removeClass(function(index, css) {
-    return (css.match(/(^|\s)color\S+/g) || []).join(' ');
+    return (css.match(/(^|\s)notation\S+/g) || []).join(' ');
   });
   turnCounter = 0;
   $('.counter').html(turnCounter);
@@ -158,6 +224,7 @@ function assignNotation() {
 //animate cards to show match
 function checkMatch() {
   if ($('.selected').length == 2) {
+    disable();
     if ($('.selected').first().data('card-index') == $('.selected').last().data('card-index')) {
       setTimeout(function() {
         $('.selected').each(function() {
@@ -167,14 +234,24 @@ function checkMatch() {
       }, 400);
     }
     else {
+      disable();
       setTimeout(function() {
         $('.selected').each(function() {
           $(this).removeClass("flipped disabled selected");
         });
-      }, 600);
+      }, 1000);
+      
       //after a delay turn both cards back over
     }
   }
+}
+
+function disable(){
+  $('.card').children().prop('disabled',true);
+    setTimeout(function(){
+       // enable click after 1 second
+       $('.card').prop('disabled',false);
+    },2000); // 1 second delay
 }
 
 function checkForWin() {
@@ -183,7 +260,7 @@ function checkForWin() {
       win.play();
       showPopUp();
     }
-  }, 700);
+  }, 1500);
 }
 
 function showPopUp(){

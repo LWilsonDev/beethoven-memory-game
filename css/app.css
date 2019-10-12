@@ -3,7 +3,7 @@ Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
 Copyright (c) 2015 Daniel Eden
 */
-@import url("https://fonts.googleapis.com/css?family=Bungee+Shade|Gaegu");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Staatliches&display=swap");
 body {
   -webkit-backface-visibility: hidden;
 }
@@ -142,7 +142,7 @@ html body {
   min-width: 100%;
   padding: 0;
   margin: 0;
-  background-color: #08c6f3;
+  background-color: #045669;
 }
 
 .page-wrapper {
@@ -152,8 +152,8 @@ html body {
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-family: "Gaegu", cursive;
-  background-color: #08c6f3;
+  font-family: "Open Sans", sans-serif;
+  background-color: #045669;
   min-height: 100%;
   padding: 0;
   margin: 0;
@@ -161,18 +161,77 @@ html body {
   overflow: hidden;
 }
 
+.visible {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
+
+.dropdown {
+  z-index: 100;
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #b4c8e8;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: -8px 5px #000;
+  padding: 0px;
+  margin: 6px;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  font-size: 12px;
+  border: 2px solid black;
+}
+@media (min-width: 768px) {
+  .dropdown {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    height: 40px;
+  }
+}
+
+*:focus {
+  outline: none;
+}
+
 .title-text {
   text-align: center;
-  margin-top: 40px;
+  color: #ecc707;
 }
 
 .title {
-  font-family: "Bungee Shade", cursive;
-  font-size: 40px;
+  font-family: "Staatliches", cursive;
+  font-size: 60px;
+  letter-spacing: 4px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  top: 100px;
+  text-shadow: -5px 4px 0px black;
 }
 @media (min-width: 768px) {
   .title {
-    font-size: 5vw;
+    font-size: 100px;
+  }
+}
+
+.sub-title {
+  color: #ecc707;
+  position: relative;
+  margin: 30px;
+  font-family: "Staatliches", cursive;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-shadow: -5px 4px 0px black;
+}
+@media (min-width: 768px) {
+  .sub-title {
+    font-size: 50px;
   }
 }
 
@@ -200,6 +259,7 @@ html body {
 
 .main {
   margin-bottom: 100px;
+  color: #eee8e8;
 }
 @media (min-width: 768px) {
   .main {
@@ -267,14 +327,24 @@ html body {
 }
 
 .instructions-title {
-  font-size: 24px;
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  .instructions-title {
+    font-size: 20px;
+  }
 }
 
 .list {
   list-style-type: none;
   line-height: 1.5;
-  font-size: 18px;
+  font-size: 16px;
   padding: 0;
+}
+@media (min-width: 768px) {
+  .list {
+    font-size: 18px;
+  }
 }
 
 .list-item {
@@ -282,20 +352,30 @@ html body {
 }
 
 .counter-text {
-  font-size: 24px;
+  font-size: 18px;
   position: relative;
+}
+@media (min-width: 768px) {
+  .counter-text {
+    font-size: 20px;
+  }
 }
 
 .counter {
-  font-family: "Gaegu", cursive;
-  font-size: 40px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
   margin-left: 20px;
+}
+@media (min-width: 768px) {
+  .counter {
+    font-size: 40px;
+  }
 }
 
 .notation-1 {
   background-color: white;
   background-position: center;
-  background-size: 100%;
+  background-size: 90%;
   background-image: url("../assets/symphony_1/01.png");
   background-repeat: no-repeat;
 }
@@ -303,7 +383,7 @@ html body {
 .notation-2 {
   background-color: white;
   background-position: center;
-  background-size: 100%;
+  background-size: 90%;
   background-image: url("../assets/symphony_1/02.png");
   background-repeat: no-repeat;
 }
@@ -311,7 +391,7 @@ html body {
 .notation-3 {
   background-color: white;
   background-position: center;
-  background-size: 100%;
+  background-size: 90%;
   background-image: url("../assets/symphony_1/03.png");
   background-repeat: no-repeat;
 }
@@ -319,7 +399,7 @@ html body {
 .notation-4 {
   background-color: white;
   background-position: center;
-  background-size: 100%;
+  background-size: 90%;
   background-image: url("../assets/symphony_1/04.png");
   background-repeat: no-repeat;
 }
@@ -327,7 +407,7 @@ html body {
 .notation-5 {
   background-color: white;
   background-position: center;
-  background-size: 100%;
+  background-size: 90%;
   background-image: url("../assets/symphony_1/05.png");
   background-repeat: no-repeat;
 }
@@ -335,13 +415,17 @@ html body {
 .notation-6 {
   background-color: white;
   background-position: center;
-  background-size: 100%;
+  background-size: 90%;
   background-image: url("../assets/symphony_1/06.png");
   background-repeat: no-repeat;
 }
 
 .plainFront {
-  background-color: white;
+  background-color: #c7c7c7;
+  background-image: url("../assets/images/question.png");
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .card {
@@ -397,16 +481,16 @@ figure {
 }
 
 .play-btn, .reset-btn, .hard-btn, .easy-btn {
-  width: 80px;
+  width: 100px;
   height: 40px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   box-shadow: -8px 5px #000;
   padding: 0px;
   margin: 6px;
-  font-family: "Gaegu", cursive;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
-  font-size: 20px;
+  font-size: 12px;
   border: 2px solid black;
   transition: all 0.2s ease-in-out;
 }
@@ -414,8 +498,9 @@ figure {
   .play-btn, .reset-btn, .hard-btn, .easy-btn {
     display: block;
     margin: 20px auto;
-    width: 100px;
+    width: 140px;
     height: 40px;
+    font-size: 16px;
   }
 }
 
@@ -424,7 +509,7 @@ figure {
 }
 
 .easy-btn {
-  background-color: #fcfc28;
+  background-color: #88e68b;
 }
 
 button:active,
@@ -433,7 +518,7 @@ button:focus {
 }
 
 .hard-btn {
-  background-color: #cb51f7;
+  background-color: #b4c8e8;
 }
 
 .active {
@@ -443,7 +528,7 @@ button:focus {
 }
 
 .reset-btn {
-  background-color: #42f445;
+  background-color: #ff9d1e;
 }
 
 .reset-btn:active {
@@ -452,7 +537,8 @@ button:focus {
 }
 
 .win-pop-up {
-  background-color: #fcfc28;
+  background-color: #b4c8e8;
+  color: black;
   -webkit-border-radius: 20px;
   border-radius: 20px;
   border: 2px solid black;
@@ -473,17 +559,22 @@ button:focus {
 }
 
 .win-title {
-  font-family: "Bungee Shade", cursive;
-  font-size: 40px;
+  font-family: "Staatliches", cursive;
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  .win-title {
+    font-size: 40px;
+  }
 }
 
 .final-counter-text {
   margin-top: 0;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .play-btn {
-  background-color: #42f445;
+  background-color: #88e68b;
   width: 120px;
 }
 
