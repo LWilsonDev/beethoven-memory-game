@@ -264,7 +264,7 @@ function checkForWin() {
       win.play();
       showPopUp();
     }
-  }, 1500);
+  }, 2000);
 }
 
 function showPopUp(){
