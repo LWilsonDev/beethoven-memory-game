@@ -98,13 +98,15 @@ win.src = "assets/sounds/win.mp3";
 //EVENTS
 
 //option buttons
-$(".hard-btn").on("click", function() {
+$(".hard-btn").on("click", function(e) {
+  e.preventDefault();
   $('.reset').addClass("plainFront");
   $(".hard-btn").addClass("active");
   $(".easy-btn").removeClass("active");
   reset();
 });
-$(".easy-btn").on("click", function() {
+$(".easy-btn").on("click", function(e) {
+  e.preventDefault();
   $('.reset').removeClass("plainFront");
   $(".easy-btn").addClass("active");
   $(".hard-btn").removeClass("active");
@@ -112,11 +114,13 @@ $(".easy-btn").on("click", function() {
 });
 
 //reset button
-$(".reset-btn").on("click", function() {
+$(".reset-btn").on("click", function(e) {
+  e.preventDefault();
   reset();
 });
 //play again button
-$(".play-btn").on("click", function() {
+$(".play-btn").on("click", function(e) {
+  e.preventDefault();
   reset();
   $(".win-pop-up").addClass("bounceOutLeft").removeClass("bounceInLeft");
   setTimeout(function(){

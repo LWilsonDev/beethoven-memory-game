@@ -70,11 +70,10 @@ html body {
 
 .title {
   font-family: $header-font;
-  font-size: 60px;
+  font-size: 40px;
   letter-spacing: 4px;
   margin-top: 80px;
   margin-bottom: 40px;
-  top: 100px;
   text-shadow: -5px 4px 0px black;
   @media (min-width: $tablet-width){
     font-size:100px;
@@ -267,7 +266,7 @@ figure {
 }
 
 %btn {
-  width: 100px;
+  width: 110px;
   height: 40px;
   @include border-radius(10px);
   box-shadow: -8px 5px #000;
@@ -349,13 +348,13 @@ button:focus {
     font-size: 40px;
   }
   font-family: $header-font;
-  font-size: $small-header;
+  font-size: $smaller-header;
   
 }
 
 .final-counter-text {
   margin-top: 0;
-  font-size: $small-header;
+  font-size: $smaller-header;
 }
 
 .play-btn {
