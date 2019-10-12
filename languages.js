@@ -29,7 +29,7 @@ var text_DEU = {
   "instructions2" : "Drehe zwei Karten um, um Beethovens musikalischen Ausschnitte zu hören",
   "instructions3" : "Finde die passenden Paare",
   "instructions4" : "Leichter Modus: die Musiknoten helfen dir, die passenden Ausschnitte zu finden ",
-  "instructions4" : "Schwieriger Modus: keine Musiknoten - benutze deine Ohren!",
+  "instructions5" : "Schwieriger Modus: keine Musiknoten - benutze deine Ohren!",
   "btn-easy": "Leichter",
   "btn-hard": "Schwieriger",
   "btn-reset": "zurücksetzen",
