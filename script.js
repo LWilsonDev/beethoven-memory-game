@@ -58,7 +58,7 @@ function addSelected(lang){
 function checkLocation(){
   $.get("https://ipinfo.io", function(response) {
   var country = response.country;
-  console.log(country);
+  console.log(response);
   
   return country;
 });
@@ -233,6 +233,7 @@ function checkMatch() {
       setTimeout(function() {
         $('.selected').each(function() {
           $(this).removeClass("notMatched selected").addClass("animated tada");
+          $(this).children(".reset").removeClass("plainFront");
           $(this).children(".spinBack").removeClass('spinBack');
         });
       }, 400);
