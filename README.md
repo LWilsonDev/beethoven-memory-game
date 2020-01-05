@@ -1,13 +1,13 @@
 # Music Memory
-A memory game to help children learn to differentiate between musical pitches. 
+A memory game to help students learn iconic musical motifs by Beethoven. 
 
-Sometimes people can find it hard to tell if one note is different from another. This game aims to make this easy by linking a visual cue to each sound in the form of coloured cards. 
+This game was specially made for Beethoven's 250th Centenery year, to help students in a school in Germany with their studies of Beethoven's music. I built it upon an existing msucial memory game that I wrote a little while ago.
 
-The game is essentially just a typical memory card game, where the player needs to find the matching pairs in the fewest turns possible. The difference here is that each pair of cards has an accompanying musical note. At the 'easy' level, the cards (or notes) have a colour, so that even if the musical pitches are ignored, pairs can still be matched. Hopefully, the musical notes will begin to be recognised, and the child will gain confidence that they can hear the different 'colours'.
+The game is essentially just a typical memory card game, where the player needs to find the matching pairs in the fewest turns possible. The difference here is that each pair of cards has an accompanying musical motif. At the 'easy' level, the cards (or notes) have a picture of the motif in musical notation, so that even if the musical motifs are ignored, pairs can still be matched. Hopefully, the musical motifs will begin to be recognised, and the student will gain confidence in recognising the different pieces.
 
-Once the user is familiar with the game, the 'hard' level can be selected. This removes all the colours, leaving all cards blank when turned, so that the only way to match them is by listening and matching the same musical notes.
+Once the user is familiar with the game, the 'hard' level can be selected. This removes all the notation, leaving all cards blank when turned, so that the only way to match them is by listening and matching the same musical motifs.
 
-The site is live [here](https://lwilsondev.github.io/music-memory-game/)
+The site is live [here](https://lwilsondev.github.io/beethoven-memory-game/)
 
 ## UX
 This game is aimed at children but should also be fun for adults. I wanted it to be clear and easy to use - without the need for lengthy instructions.
@@ -22,10 +22,11 @@ On larger screens, the deck should remain in proportion, and the layout changes 
 
 ## Features
 
+- **German translation**: The game can be translated properly into German, because I was asked to create this for a school in Germany. I didnt wan't to rely on Google translate, so wrote the translation feature myself.
 - **'Win' pop-out**: An animated 'pop-out' window appears when the final pair of cards is matched, together with a fanfare sound.
-- **Easy Level**: This is the default level. All the cards have a colour to them to help find the matching pairs.
-- **Hard Level**: All the coloured faces are removed, leaving only white cards. The only way to match them is to listen for the matching notes.
-- **Sounds**: I made MP3 recordings of myself playing various notes and a fanfare on a trumpet.  
+- **Easy Level**: This is the default level. All the cards have a picture to them to help find the matching pairs.
+- **Hard Level**: All the picture faces are removed, leaving only question marks. The only way to match them is to listen for the matching motifs.
+- **Sounds**: All MP3's were compiled from royalty-free recordings.
  
 ### Existing Features
 - Deck of 12 cards (6 pairs) with 6 musical notes
@@ -52,7 +53,7 @@ On larger screens, the deck should remain in proportion, and the layout changes 
 
 - [Javascript](https://www.javascript.com/)
 - [SASS](https://sass-lang.com/)  
-    - I wanted to use SCSS to create the CSS. I like the use of variables and mixins and it was something I wanted to practice and gain more experience with. I used [Cloud9](https://c9.io/) to compile the CSS file.
+    - I wanted to use SCSS to create the CSS. I like the use of variables and mixins and it was something I wanted to practice and gain more experience with. 
 - [Animate.scss](http://geoffgraham.me/animate-scss/)  
     - I used this adaptation of the [Animate.css](https://daneden.github.io/animate.css/) library of animations. I wanted to use SCSS so this was a perfect solution. I used the library animations as it was quicker and easier than writing my own, and I felt the results were better. I used three of the animations from the library - 'bounceIn' and 'bounceOut' for the 'win' pop-out, and 'Tada' for the matched pairs.
 - I used Git and [Github](https://github.com/) for version control
@@ -75,15 +76,15 @@ The game logic and all aspects of design and UX were tested manually.
 
 I deployed this app using [Github pages](https://pages.github.com/)
 I pushed the code to Github (I already had the repository as I used Github for version control). I then adjusted the repository settings to allow the page to be published on Github Pages.
-It can be found [here](https://lwilsondev.github.io/music-memory-game/)
 
 ## Credits
 
 ### Photos
-- Card background image: Music notes by 'Sad93' [Pixabay](https://pixabay.com/en/background-wallpaper-music-1622424/)
+- Beethoven image: https://www.wpclipart.com/famous/composers/Beethoven/Beethoven_light.png.html
+- Scores provided by Raphael Petri
 
 ### Sounds
-- My own recordings
+- MP3's compiled by Raphael Petri from royalty-free recordings 
 
 ### Acknowledgements
 
@@ -97,4 +98,4 @@ It can be found [here](https://lwilsondev.github.io/music-memory-game/)
 
 https://www.wpclipart.com/famous/composers/Beethoven/Beethoven_light.png.html
 
-https://www.pinclipart.com 
+https://www.pinclipart.com
