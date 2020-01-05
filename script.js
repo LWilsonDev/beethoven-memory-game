@@ -1,6 +1,9 @@
 $(document).ready(function() {
-
-  load_lang();
+  sessionStorage.clear();
+  
+    // sessionStorage.setItem('piece', 'symphony_1');
+  
+  loadLang();
   startGame();
   
   
@@ -8,8 +11,27 @@ $(document).ready(function() {
 
 });
 
+function pieceSelect(piece){
+  
+  reset();
+  sessionStorage.clear();
+  console.log(sessionStorage['piece']);
+  // Save data to sessionStorage
+sessionStorage.setItem('piece', piece);
+console.log(sessionStorage['piece']);
+// // Get saved data from sessionStorage
+// let piece = sessionStorage.getItem('piece');
 
-function load_lang() {
+// // Remove saved data from sessionStorage
+// sessionStorage.removeItem('key');
+
+// // Remove all saved data from sessionStorage
+// sessionStorage.clear();
+  
+ }
+
+
+function loadLang() {
 
   var $dropdown = $("#country_select");    
   $.each(LanguageList, function(key, value) {
@@ -56,43 +78,76 @@ function addSelected(lang){
 
 
 function checkLocation(){
-  $.get("https://ipinfo.io", function(response) {
-  var country = response.country;
-  console.log(response);
+  var country = $.get("https://ipinfo.io", function(response) {
+  console.log(response.ip, response.country);
+}, "jsonp");
   
-  return country;
-});
-
 }
+
+
 
 
 //VARIABLES
 
 var cards = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6];
-
+let piece = sessionStorage.getItem('piece');
 var turnCounter = 0;
+var deckLength = 6;
 
 
-var s1_s1 = new Audio();
-s1_s1.src = "assets/symphony_1/01.mp3";
+// var s1_s1 = new Audio();
+// s1_s1.src = "assets/symphony_1/01.mp3";
 
-var s1_s2 = new Audio();
-s1_s2.src = "assets/symphony_1/02.mp3";
+// var s1_s2 = new Audio();
+// s1_s2.src = "assets/symphony_1/02.mp3";
 
-var s1_s3 = new Audio();
-s1_s3.src = "assets/symphony_1/03.mp3";
+// var s1_s3 = new Audio();
+// s1_s3.src = "assets/symphony_1/03.mp3";
 
-var s1_s4 = new Audio();
-s1_s4.src = "assets/symphony_1/04.mp3";
+// var s1_s4 = new Audio();
+// s1_s4.src = "assets/symphony_1/04.mp3";
 
-var s1_s5 = new Audio();
-s1_s5.src = "assets/symphony_1/05.mp3";
+// var s1_s5 = new Audio();
+// s1_s5.src = "assets/symphony_1/05.mp3";
 
-var s1_s6 = new Audio();
-s1_s6.src = "assets/symphony_1/06.mp3";
+// var s1_s6 = new Audio();
+// s1_s6.src = "assets/symphony_1/06.mp3";
 
 var win = new Audio();
 win.src = "assets/sounds/win.mp3";
+
+function playMusic(i){
+  
+  var clips = getPieceClips(piece);
+
+  var clip = new Audio();
+  var index = clips[i-1].value;
+  console.log(index);
+  
+  clip.src = 'assets/'+piece+'/'+index+'.mp3';
+  console.log(clip.src);
+
+  if (!clip.paused) {
+    clip.pause();
+    clip.currentTime = 0;
+  }
+  clip.play();
+}
+
+
+function getPieceClips(){
+    //return array of mp3 clips
+
+  var clips = [];
+    for(var i=1; i<=deckLength; i ++){
+      clips.push({
+        key: 'key'+i,
+        value: '0' +i
+      });
+    }
+    return clips;
+}
+
 
 
 //EVENTS
@@ -135,32 +190,37 @@ $('.card').on('click', function(e) {
   if($('.selected').length <2){
     $(this).addClass('flipped selected disabled');
   }
+
+  // for bug on iphone clicking on deck focuses on language picker  
+  $('.deck').on('click', function(e) {
+    e.preventDefault();  
+  });
   
-  
-let cardIndex = $(this).data('card-index');
-switch(cardIndex) {
-    case 1:
-        play1();
-        break;
-    case 2:
-        play2();
-        break;
-    case 3:
-        play3();
-        break;
-    case 4:
-        play4();
-        break;
-    case 5:
-        play5();
-        break;
-    case 6:
-        play6();
-        break;    
-}
-  moveCounter();
-  checkMatch();
-  checkForWin();
+  let cardIndex = $(this).data('card-index');
+  playMusic(cardIndex);
+  // switch(cardIndex) {
+  //   case 1:
+  //       play1();
+  //       break;
+  //   case 2:
+  //       play2();
+  //       break;
+  //   case 3:
+  //       play3();
+  //       break;
+  //   case 4:
+  //       play4();
+  //       break;
+  //   case 5:
+  //       play5();
+  //       break;
+  //   case 6:
+  //       play6();
+  //       break;    
+  // }
+    moveCounter();
+    checkMatch();
+    checkForWin();
 });
 
 

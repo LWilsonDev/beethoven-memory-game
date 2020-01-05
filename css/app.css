@@ -169,7 +169,7 @@ html body {
   display: none;
 }
 
-.dropdown {
+.lang-dropdown {
   z-index: 100;
   width: 100px;
   height: 30px;
@@ -188,12 +188,27 @@ html body {
   border: 2px solid black;
 }
 @media (min-width: 768px) {
-  .dropdown {
+  .lang-dropdown {
     display: block;
     margin: 20px auto;
     width: 100px;
     height: 40px;
   }
+}
+
+.piece-dropdown {
+  background-color: #b4c8e8;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: -8px 5px #000;
+  padding: 0px;
+  margin: 6px;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  font-size: 12px;
+  border: 2px solid black;
+  width: 150px;
+  height: 40px;
 }
 
 *:focus {

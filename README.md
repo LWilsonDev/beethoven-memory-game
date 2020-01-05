@@ -90,4 +90,11 @@ It can be found [here](https://lwilsondev.github.io/music-memory-game/)
 - I received inspiration for this project from
     - https://github.com/IonicaBizau/memory-blocks
     - https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript
-- I used this shuffle function: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array    
+- I used this shuffle function: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array   
+
+
+
+
+https://www.wpclipart.com/famous/composers/Beethoven/Beethoven_light.png.html
+
+https://www.pinclipart.com 

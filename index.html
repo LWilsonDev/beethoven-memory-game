@@ -12,13 +12,25 @@
 <body>
   <div class="page-wrapper">
     <label for="country_select" value="Languages">
-    <select id="country_select" onchange="loadsLanguage(this.value);" class="dropdown"></select>
+    <select id="country_select" onchange="loadsLanguage(this.value);" class="lang-dropdown"></select>
     
     
     <header class="title-text">
       <h1 class="title">Beethoven!</h1>
     </header>
     <h2 class='sub-title'><span class="lang-subtitle"></span></h2>
+    <label for="piece_select" value="Languages"></label>
+    <select id="piece_select" onchange="pieceSelect(this.value);" class="piece-dropdown">
+      
+      
+      <option value="symphony_1">Symphony No.1</option>
+     
+      <option value="symphony_5">Symphony No.5</option>
+      <option value="Sonata_Pathetique">Sonata Pathetique</option>
+      <option value="Moonlight_Sonata">Moonlight Sonata</option>
+      
+
+    </select>
     
     <div class="main">
       <aside class="instructions">

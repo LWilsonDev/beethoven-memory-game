@@ -7,7 +7,7 @@ var LanguageList = {
 var text_EN = {
   "subtitle" : "Music Memory",
   "instructions-title" : "How to Play:",
-  "instructions1" : "Make sure you have sound on to hear the notes",
+  "instructions1" : "Make sure you have sound on to hear the music",
   "instructions2" : "Flip 2 cards and listen to Beethoven’s musical motifs",
   "instructions3" : "Find the matching pairs",
   "instructions4" : "Easy Mode: Musical notation helps you to find the matching motif",
