@@ -1,32 +1,25 @@
 $(document).ready(function() {
-  sessionStorage.clear();
-  
-    // sessionStorage.setItem('piece', 'symphony_1');
-  
+ 
+  let piece = getPiece();
+  console.log(piece);
   loadLang();
   startGame();
   
-  
+
+  $('#piece_select').on('change', function(e) {
+    e.preventDefault();
+    reset();
+    let piece = getPiece();
+  });
 
 
 });
 
-function pieceSelect(piece){
+
+function getPiece(){
   
-  reset();
-  sessionStorage.clear();
-  console.log(sessionStorage['piece']);
-  // Save data to sessionStorage
-sessionStorage.setItem('piece', piece);
-console.log(sessionStorage['piece']);
-// // Get saved data from sessionStorage
-// let piece = sessionStorage.getItem('piece');
-
-// // Remove saved data from sessionStorage
-// sessionStorage.removeItem('key');
-
-// // Remove all saved data from sessionStorage
-// sessionStorage.clear();
+  let piece = $('#piece_select').val();
+  return piece;
   
  }
 
@@ -90,33 +83,16 @@ function checkLocation(){
 //VARIABLES
 
 var cards = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6];
-let piece = sessionStorage.getItem('piece');
+let piece = getPiece();
 var turnCounter = 0;
 var deckLength = 6;
 
-
-// var s1_s1 = new Audio();
-// s1_s1.src = "assets/symphony_1/01.mp3";
-
-// var s1_s2 = new Audio();
-// s1_s2.src = "assets/symphony_1/02.mp3";
-
-// var s1_s3 = new Audio();
-// s1_s3.src = "assets/symphony_1/03.mp3";
-
-// var s1_s4 = new Audio();
-// s1_s4.src = "assets/symphony_1/04.mp3";
-
-// var s1_s5 = new Audio();
-// s1_s5.src = "assets/symphony_1/05.mp3";
-
-// var s1_s6 = new Audio();
-// s1_s6.src = "assets/symphony_1/06.mp3";
 
 var win = new Audio();
 win.src = "assets/sounds/win.mp3";
 
 function playMusic(i){
+  let piece = getPiece();
   
   var clips = getPieceClips(piece);
 
@@ -198,35 +174,16 @@ $('.card').on('click', function(e) {
   
   let cardIndex = $(this).data('card-index');
   playMusic(cardIndex);
-  // switch(cardIndex) {
-  //   case 1:
-  //       play1();
-  //       break;
-  //   case 2:
-  //       play2();
-  //       break;
-  //   case 3:
-  //       play3();
-  //       break;
-  //   case 4:
-  //       play4();
-  //       break;
-  //   case 5:
-  //       play5();
-  //       break;
-  //   case 6:
-  //       play6();
-  //       break;    
-  // }
-    moveCounter();
-    checkMatch();
-    checkForWin();
+  moveCounter();
+  checkMatch();
+  checkForWin();
 });
 
 
 //FUNCTIONS
 
 function startGame() {
+  
   $('.deck').children().addClass('card notMatched');
   cards = shuffle(cards);
   //assign shuffled cards to divs
@@ -279,9 +236,10 @@ function assignIndex() {
 }
 
 function assignNotation() {
+  let piece = getPiece();
   $('.card').each(function(index) {
     $(this).children(".spinBack").attr('data-card-index', cards[index]);
-    $(this).children(".spinBack").addClass("notation-" + cards[index]);
+    $(this).children(".spinBack").addClass(piece+'_'+ cards[index]);
   });
 }
 
@@ -332,51 +290,3 @@ function showPopUp(){
   $(".win-pop-up").removeClass("hidden bounceOutLeft").addClass("animated bounceInLeft")
 }
 
-//bug-fix: when two matching notes are selected, check if note is already playing, pause and reset and play again
-function play1() {
-  if (!s1_s1.paused) {
-    s1_s1.pause();
-    s1_s1.currentTime = 0;
-  }
-  s1_s1.play();
-}
-
-function play2() {
-  if (!s1_s2.paused) {
-    s1_s2.pause();
-    s1_s2.currentTime = 0;
-  }
-  s1_s2.play();
-}
-
-function play3() {
-  if (!s1_s3.paused) {
-    s1_s3.pause();
-    s1_s3.currentTime = 0;
-  }
-  s1_s3.play();
-}
-
-function play4() {
-  if (!s1_s4.paused) {
-    s1_s4.pause();
-    s1_s4.currentTime = 0;
-  }
-  s1_s4.play();
-}
-
-function play5() {
-  if (!s1_s5.paused) {
-    s1_s5.pause();
-    s1_s5.currentTime = 0;
-  }
-  s1_s5.play();
-}
-
-function play6() {
-  if (!s1_s6.paused) {
-    s1_s6.pause();
-    s1_s6.currentTime = 0;
-  }
-  s1_s6.play();
-}

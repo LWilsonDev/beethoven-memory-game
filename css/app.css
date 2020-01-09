@@ -387,7 +387,7 @@ html body {
   }
 }
 
-.notation-1 {
+.symphony_1_1 {
   background-color: white;
   background-position: center;
   background-size: 90%;
@@ -395,7 +395,31 @@ html body {
   background-repeat: no-repeat;
 }
 
-.notation-2 {
+.symphony_5_1 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/symphony_5/01.png");
+  background-repeat: no-repeat;
+}
+
+.moonlight_sonata_1 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/moonlight_sonata/01.png");
+  background-repeat: no-repeat;
+}
+
+.sonata_pathetique_1 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/sonata_pathetique/01.png");
+  background-repeat: no-repeat;
+}
+
+.symphony_1_2 {
   background-color: white;
   background-position: center;
   background-size: 90%;
@@ -403,7 +427,31 @@ html body {
   background-repeat: no-repeat;
 }
 
-.notation-3 {
+.symphony_5_2 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/symphony_5/02.png");
+  background-repeat: no-repeat;
+}
+
+.moonlight_sonata_2 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/moonlight_sonata/02.png");
+  background-repeat: no-repeat;
+}
+
+.sonata_pathetique_2 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/sonata_pathetique/02.png");
+  background-repeat: no-repeat;
+}
+
+.symphony_1_3 {
   background-color: white;
   background-position: center;
   background-size: 90%;
@@ -411,7 +459,31 @@ html body {
   background-repeat: no-repeat;
 }
 
-.notation-4 {
+.symphony_5_3 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/symphony_5/03.png");
+  background-repeat: no-repeat;
+}
+
+.moonlight_sonata_3 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/moonlight_sonata/03.png");
+  background-repeat: no-repeat;
+}
+
+.sonata_pathetique_3 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/sonata_pathetique/03.png");
+  background-repeat: no-repeat;
+}
+
+.symphony_1_4 {
   background-color: white;
   background-position: center;
   background-size: 90%;
@@ -419,7 +491,31 @@ html body {
   background-repeat: no-repeat;
 }
 
-.notation-5 {
+.symphony_5_4 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/symphony_5/04.png");
+  background-repeat: no-repeat;
+}
+
+.moonlight_sonata_4 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/moonlight_sonata/04.png");
+  background-repeat: no-repeat;
+}
+
+.sonata_pathetique_4 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/sonata_pathetique/04.png");
+  background-repeat: no-repeat;
+}
+
+.symphony_1_5 {
   background-color: white;
   background-position: center;
   background-size: 90%;
@@ -427,11 +523,59 @@ html body {
   background-repeat: no-repeat;
 }
 
-.notation-6 {
+.symphony_5_5 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/symphony_5/05.png");
+  background-repeat: no-repeat;
+}
+
+.moonlight_sonata_5 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/moonlight_sonata/05.png");
+  background-repeat: no-repeat;
+}
+
+.sonata_pathetique_5 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/sonata_pathetique/05.png");
+  background-repeat: no-repeat;
+}
+
+.symphony_1_6 {
   background-color: white;
   background-position: center;
   background-size: 90%;
   background-image: url("../assets/symphony_1/06.png");
+  background-repeat: no-repeat;
+}
+
+.symphony_5_6 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/symphony_5/06.png");
+  background-repeat: no-repeat;
+}
+
+.moonlight_sonata_6 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/moonlight_sonata/06.png");
+  background-repeat: no-repeat;
+}
+
+.sonata_pathetique_6 {
+  background-color: white;
+  background-position: center;
+  background-size: 90%;
+  background-image: url("../assets/sonata_pathetique/06.png");
   background-repeat: no-repeat;
 }
 

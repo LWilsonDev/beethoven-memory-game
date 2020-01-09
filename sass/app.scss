@@ -206,29 +206,23 @@ html body {
   margin-left: 20px;
 }
 
-.notation-1 {
-  @include notation("../assets/symphony_1/01.png")
+@for $i from 1 through 6 {
+  .symphony_1_#{$i} {
+  @include notation("../assets/symphony_1/0#{$i}.png")
+  }
+  .symphony_5_#{$i} {
+  @include notation("../assets/symphony_5/0#{$i}.png")
+  }
+  .moonlight_sonata_#{$i} {
+  @include notation("../assets/moonlight_sonata/0#{$i}.png")
+  }
+  .sonata_pathetique_#{$i} {
+  @include notation("../assets/sonata_pathetique/0#{$i}.png")
+  }
+
 }
 
-.notation-2 {
-  @include notation("../assets/symphony_1/02.png")
-}
 
-.notation-3 {
-  @include notation("../assets/symphony_1/03.png")
-}
-
-.notation-4 {
-  @include notation("../assets/symphony_1/04.png")
-}
-
-.notation-5 {
-  @include notation("../assets/symphony_1/05.png")
-}
-
-.notation-6 {
-  @include notation("../assets/symphony_1/06.png")
-}
 
 .plainFront {
   background-color: $silver;
