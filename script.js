@@ -239,7 +239,7 @@ function assignNotation() {
   let piece = getPiece();
   $('.card').each(function(index) {
     $(this).children(".spinBack").attr('data-card-index', cards[index]);
-    $(this).children(".spinBack").addClass(piece+'_'+ cards[index]);
+    $(this).children(".spinBack").addClass('notation_'+piece+'_'+ cards[index]);
   });
 }
 

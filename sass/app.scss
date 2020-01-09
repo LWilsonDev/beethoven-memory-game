@@ -207,17 +207,19 @@ html body {
 }
 
 @for $i from 1 through 6 {
-  .symphony_1_#{$i} {
-  @include notation("../assets/symphony_1/0#{$i}.png")
+  .notation_symphony_1_#{$i} {
+  @include notation("../assets/symphony_1/0#{$i}.png");
   }
-  .symphony_5_#{$i} {
-  @include notation("../assets/symphony_5/0#{$i}.png")
+  .notation_symphony_5_#{$i} {
+  @include notation("../assets/symphony_5/0#{$i}.png");
   }
-  .moonlight_sonata_#{$i} {
-  @include notation("../assets/moonlight_sonata/0#{$i}.png")
+  .notation_moonlight_sonata_#{$i} {
+  @include notation("../assets/moonlight_sonata/0#{$i}.png");
+  background-size: 85%;
   }
-  .sonata_pathetique_#{$i} {
-  @include notation("../assets/sonata_pathetique/0#{$i}.png")
+  .notation_sonata_pathetique_#{$i} {
+  @include notation("../assets/sonata_pathetique/0#{$i}.png");
+  background-size: 85%;
   }
 
 }
