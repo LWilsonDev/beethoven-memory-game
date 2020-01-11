@@ -11,15 +11,17 @@
 
 <body>
   <div class="page-wrapper">
-    <label for="country_select" value="Languages">
-    <select id="country_select" onchange="loadsLanguage(this.value);" class="lang-dropdown"></select>
+    <div class='language-choice'>
+      <label for="country_select"><span class="lang-country"></span></label>
+      <select id="country_select" onchange="loadsLanguage(this.value);" class="lang-dropdown"></select>
+    </div>
     
     
     <header class="title-text">
-      <h1 class="title">Beethoven!</h1>
+      <h1 class="title">Beethoven</h1>
     </header>
     <h2 class='sub-title'><span class="lang-subtitle"></span></h2>
-    <label for="piece_select" value="Languages"></label>
+    <label class='instructions-title' for="piece_select"><span class="lang-piece"></span></label>
     <select id="piece_select" class="piece-dropdown">
       
       
@@ -33,11 +35,16 @@
     </select>
     
     <div class="main">
+      <div class="instructions-pop-up hidden">
+            <h2 class="win-title"><span class="lang-win"></span></h2>
+            <h3 class="counter-text"><span class="lang-counter"></span><span class="counter">0</span></h3>
+            <button class="play-btn"><span class="lang-again"></span></button>
+        </div>
       <aside class="instructions">
         <h3 class="instructions-title"><span class="lang-instructions-title"></span></h3>
         <ul class="list">
           <li class="list-item">
-            <span class="lang-instructions1"></span>
+            <strong><span class="lang-instructions1"></span></strong>
           </li>
           <li class="list-item">
             <span class="lang-instructions2"></span>

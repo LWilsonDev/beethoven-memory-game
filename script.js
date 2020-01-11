@@ -6,8 +6,8 @@ $(document).ready(function() {
   startGame();
   
 
-  $('#piece_select').on('change', function(e) {
-    e.preventDefault();
+  $('#piece_select').on('change', function() {
+    // e.preventDefault();
     reset();
     let piece = getPiece();
   });

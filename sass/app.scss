@@ -31,44 +31,42 @@ html body {
 .hidden {
   display: none;
 }
-
-
-.lang-dropdown {
-  z-index: 100;
-  width: 100px;
-  height: 30px;
+.language-choice {
+  color: white;
+  font-size: 16px;
   position: absolute;
   top:20px;
   right:20px;
-  background-color:$blue;
-  @include border-radius(10px);
-  box-shadow: -8px 5px #000;
-  padding: 0px;
-  margin: 6px;
-  font-family: $main-font;
-  text-align: center;
-  font-size: 12px;
-  border: 2px solid black;
+  
+}
+
+.lang-dropdown {
+  font-size:16px;
+  z-index: 100;
   @media (min-width: $tablet-width) {
-    display: block;
-    margin: 20px auto;
-    width: 100px;
-    height: 40px;
+    
+    
     }
 }
 
 .piece-dropdown {
+  font-size:16px;
   background-color:$blue;
   @include border-radius(10px);
   box-shadow: -8px 5px #000;
   padding: 0px;
-  margin: 6px;
+  margin: 10px auto;
   font-family: $main-font;
   text-align: center;
-  font-size: 12px;
   border: 2px solid black;
-  width:150px;
+  width:200px;
   height: 40px;
+  @media (min-width: $tablet-width) {
+    
+    margin: 20px auto;
+    width: 200px;
+    height: 40px;
+    } 
 }
 
 
@@ -84,12 +82,16 @@ html body {
   
 }
 
+.instructions-title{
+  color: white;
+}
+
 .title {
   font-family: $header-font;
-  font-size: 40px;
+  font-size: 60px;
   letter-spacing: 4px;
   margin-top: 80px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-shadow: -5px 4px 0px black;
   @media (min-width: $tablet-width){
     font-size:100px;
@@ -97,13 +99,13 @@ html body {
 }
 .sub-title {
   color: $bright-yellow;
-  margin:30px; 
+  margin:0px 30px 30px 30px; 
   font-family: $header-font;
-  font-size: 30px;
+  font-size: 40px;
   letter-spacing: 2px;
   text-shadow: -5px 4px 0px black;
   @media (min-width: $tablet-width){
-    font-size: 50px;
+    font-size: 70px;
   }
 }
 
@@ -223,7 +225,6 @@ html body {
   }
 
 }
-
 
 
 .plainFront {
