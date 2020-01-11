@@ -7,10 +7,10 @@ The game is essentially just a typical memory card game, where the player needs 
 
 Once the user is familiar with the game, the 'hard' level can be selected. This removes all the notation, leaving all cards blank when turned, so that the only way to match them is by listening and matching the same musical motifs.
 
-The site is live [here](https://lwilsondev.github.io/beethoven-memory-game/)
+The site is live [here](http://beethoven-music-memory.co.uk/)
 
 ## UX
-This game is aimed at children but should also be fun for adults. I wanted it to be clear and easy to use - without the need for lengthy instructions.
+This game is aimed at children aged 11-15 but should also be fun for adults. I wanted it to be clear and easy to use - without the need for lengthy instructions.
 
 To keep the game lively and fun, I added some animations and a little fanfare when the game is won.
 
@@ -29,21 +29,20 @@ On larger screens, the deck should remain in proportion, and the layout changes 
 - **Sounds**: All MP3's were compiled from royalty-free recordings.
  
 ### Existing Features
-- Deck of 12 cards (6 pairs) with 6 musical notes
+- Deck of 12 cards (6 pairs) with 6 musical sounds
 - Animation for turning cards, matching pairs, and winning.
 - Turn counter
 
-### Features to implement
-- I would like to implement the ability to choose the size of the board (the number of cards) at both levels.
 
 ### Game Logic
 ##### On load
- - The game is set up by shuffling the array of card indexes, and assigning each card a 'card-index' and a colour on the hidden side, by adding a css class ("color-" + cards[index]). 
+ - The game is set up by shuffling the array of card indexes, and assigning each card a 'card-index' and a colour on the hidden side, by adding a css class ("color-" + cards[index]).
+ - There is a choice of 4 pieces of music. When a user selects a piece, the game resets and the new mp3s and images are assigned. 
 
 ##### On click
  There is an event listener which, when a card is clicked, fires the sound and the animation to flip the card. The following chain of events is triggered:
 - These classes are added to the card: flipped, selected, disabled. These trigger the animation, start a count of how many cards are selected (max of two) and disable the card so it cannot be reclicked on that turn.
-- The card-index is used to assign the correct MP3 note to each card, using a switch statement. The note is played.
+- The card-index is used to assign the correct MP3 note to each card.
 - If 2 cards are flipped, check for a match
 - Each time a pair is flipped (when there are 2 cards with the class 'selected'), the turn counter increases
 - Check for win: If all 12 cards have been matched, the win pop-up shows (after a small delay to allow for the final note and animation to finish)
@@ -51,9 +50,9 @@ On larger screens, the deck should remain in proportion, and the layout changes 
 
 ## Technologies Used
 
-- [Javascript](https://www.javascript.com/)
+- [Javascript](https://www.javascript.com/) and [JQuery](https://www.jquery.com/) 
 - [SASS](https://sass-lang.com/)  
-    - I wanted to use SCSS to create the CSS. I like the use of variables and mixins and it was something I wanted to practice and gain more experience with. 
+    - I wanted to use SCSS to create the CSS. I like the use of variables and mixins and it was something I wanted to practice and gain more experience with. It was particulary useful for assigning the correct picture to each card accross all levels. A simple loop assigns 6 different pictures to cards for each level. This would have been very repetitive to code without the use of scss.
 - [Animate.scss](http://geoffgraham.me/animate-scss/)  
     - I used this adaptation of the [Animate.css](https://daneden.github.io/animate.css/) library of animations. I wanted to use SCSS so this was a perfect solution. I used the library animations as it was quicker and easier than writing my own, and I felt the results were better. I used three of the animations from the library - 'bounceIn' and 'bounceOut' for the 'win' pop-out, and 'Tada' for the matched pairs.
 - I used Git and [Github](https://github.com/) for version control
@@ -75,16 +74,20 @@ The game logic and all aspects of design and UX were tested manually.
 ## Deployment
 
 I deployed this app using [Github pages](https://pages.github.com/)
-I pushed the code to Github (I already had the repository as I used Github for version control). I then adjusted the repository settings to allow the page to be published on Github Pages.
+I pushed the code to Github (I already had the repository as I used Github for version control). I then adjusted the repository settings to allow the page to be published on Github Pages. I assigned a custom domain and configured the DNS to support HTTPS
+
+#### Usage
+
+- This game is intended for educational purposes and is not intended for commercial usage. 
 
 ## Credits
 
 ### Photos
 - Beethoven image: https://www.wpclipart.com/famous/composers/Beethoven/Beethoven_light.png.html
-- Scores provided by Raphael Petri
+- Scores kindly provided by Raphael Petri
 
 ### Sounds
-- MP3's compiled by Raphael Petri from royalty-free recordings 
+- MP3's kindly compiled by Raphael Petri from royalty-free recordings in the public domain.
 
 ### Acknowledgements
 
@@ -94,8 +97,3 @@ I pushed the code to Github (I already had the repository as I used Github for v
 - I used this shuffle function: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array   
 
 
-
-
-https://www.wpclipart.com/famous/composers/Beethoven/Beethoven_light.png.html
-
-https://www.pinclipart.com
