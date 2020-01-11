@@ -334,14 +334,20 @@ button:focus {
   box-shadow: -1px 1px #000;
   top: 4px;
 }
-
+.dim {
+  background-color: grey;
+  opacity: 0.4;
+  z-index:0;
+}
 .win-pop-up {
-  background-color: $blue;
+  font-family: $main-font;
+  text-align: center;
+  background-color: $yellow;
   color: black;
   @include border-radius(20px);
   border: 2px solid black;
   width: 300px; 
-  height: 300px; 
+  height: 260px; 
   margin: 40px auto;
   z-index: 5; 
   cursor: pointer; 
@@ -357,16 +363,18 @@ button:focus {
 }
 
 .win-title {
+  margin-top:20px;
+  margin-bottom:10px;
   @media (min-width: $tablet-width) {
     font-size: 40px;
   }
-  font-family: $header-font;
-  font-size: $smaller-header;
+  font-family: $main-font;
+  font-size: 30px;
   
 }
 
 .final-counter-text {
-  margin-top: 0;
+  margin-top: 0px;
   font-size: $smaller-header;
   
 }

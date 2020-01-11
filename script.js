@@ -156,7 +156,9 @@ $(".play-btn").on("click", function(e) {
   $(".win-pop-up").addClass("bounceOutLeft").removeClass("bounceInLeft");
   setTimeout(function(){
     $(".win-pop-up").addClass("hidden");
+    $('.page-wrapper').removeClass('dim');
   }, 500);
+
 });
 
 
@@ -287,6 +289,7 @@ function checkForWin() {
 }
 
 function showPopUp(){
-  $(".win-pop-up").removeClass("hidden bounceOutLeft").addClass("animated bounceInLeft")
+  $(".win-pop-up").removeClass("hidden bounceOutLeft").addClass("animated bounceInLeft");
+  $('.page-wrapper').addClass('dim');
 }
 

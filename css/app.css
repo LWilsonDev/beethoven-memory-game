@@ -703,14 +703,22 @@ button:focus {
   top: 4px;
 }
 
+.dim {
+  background-color: grey;
+  opacity: 0.4;
+  z-index: 0;
+}
+
 .win-pop-up {
-  background-color: #b4c8e8;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  background-color: #f1f178;
   color: black;
   -webkit-border-radius: 20px;
   border-radius: 20px;
   border: 2px solid black;
   width: 300px;
-  height: 300px;
+  height: 260px;
   margin: 40px auto;
   z-index: 5;
   cursor: pointer;
@@ -726,8 +734,10 @@ button:focus {
 }
 
 .win-title {
-  font-family: "Staatliches", cursive;
-  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
 }
 @media (min-width: 768px) {
   .win-title {
@@ -736,7 +746,7 @@ button:focus {
 }
 
 .final-counter-text {
-  margin-top: 0;
+  margin-top: 0px;
   font-size: 18px;
 }
 
