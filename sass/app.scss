@@ -31,22 +31,18 @@ html body {
 .hidden {
   display: none;
 }
+
 .language-choice {
   color: white;
   font-size: 16px;
   position: absolute;
   top:20px;
   right:20px;
-  
 }
 
 .lang-dropdown {
   font-size:16px;
   z-index: 100;
-  @media (min-width: $tablet-width) {
-    
-    
-    }
 }
 
 .piece-dropdown {
@@ -62,13 +58,11 @@ html body {
   width:200px;
   height: 40px;
   @media (min-width: $tablet-width) {
-    
     margin: 20px auto;
     width: 200px;
     height: 40px;
     } 
 }
-
 
 *:focus {
     outline: none;
@@ -97,6 +91,7 @@ html body {
     font-size:100px;
   }
 }
+
 .sub-title {
   color: $bright-yellow;
   margin:0px 30px 30px 30px; 
@@ -334,11 +329,13 @@ button:focus {
   box-shadow: -1px 1px #000;
   top: 4px;
 }
+
 .dim {
   background-color: grey;
   opacity: 0.4;
   z-index:0;
 }
+
 .win-pop-up {
   font-family: $main-font;
   text-align: center;
@@ -388,4 +385,18 @@ button:focus {
 .play-btn:active {
   box-shadow: -1px 1px #000;
   top: 4px;
+}
+
+
+footer {
+border-top: 5px solid darken($blue, 10%);
+  background-color:$blue;
+text-align: center;
+}
+.footer-contents {
+  font-size: 12px;
+  margin: 20px auto;
+  @media (min-width: $tablet-width) {
+    width: 80%;
+  }
 }

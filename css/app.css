@@ -181,6 +181,7 @@ html body {
   font-size: 16px;
   z-index: 100;
 }
+
 .piece-dropdown {
   font-size: 16px;
   background-color: #b4c8e8;
@@ -758,6 +759,22 @@ button:focus {
 .play-btn:active {
   box-shadow: -1px 1px #000;
   top: 4px;
+}
+
+footer {
+  border-top: 5px solid #8dabdc;
+  background-color: #b4c8e8;
+  text-align: center;
+}
+
+.footer-contents {
+  font-size: 12px;
+  margin: 20px auto;
+}
+@media (min-width: 768px) {
+  .footer-contents {
+    width: 80%;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */
