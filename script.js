@@ -1,84 +1,46 @@
 $(document).ready(function() {
- 
   let piece = getPiece();
-  console.log(piece);
-  loadLang();
+  // load as english on first load
+  loadsLanguageText('en');
   startGame();
-  
-
-  $('#piece_select').on('change', function() {
-    // e.preventDefault();
-    reset();
-    let piece = getPiece();
-  });
-
-
 });
 
 
+// language and piece selection:
+
+$('#piece_select').on('change', function() {
+    reset();
+    let piece = getPiece();
+});
+
+$('#country_select').on('change', function() {
+  let langChoice =  $('#country_select').val();
+  // load text for whole page
+  loadsLanguageText(langChoice);
+  // set HTML lang= attribute 
+  setHtmlLang(langChoice);
+});
+
 function getPiece(){
-  
   let piece = $('#piece_select').val();
   return piece;
-  
  }
 
-
-function loadLang() {
-
-  var $dropdown = $("#country_select");    
-  $.each(LanguageList, function(key, value) {
-    $dropdown.
-      append($("<option/>").
-      val(key).
-      text(value));
-    });
-  var location = checkLocation();
-  if(location == 'DEU'){
-    loadsLanguage("DEU");
-    
-    $dropdown.find('option:contains("Deutch")').attr("selected",true);
-    $dropdown.find('option:contains("English")').removeAttr("selected",true);
-  } else {
-    loadsLanguage("EN");
-    
-    $dropdown.find('option:contains("English")').attr("selected",true);
-    $dropdown.find('option:contains("Deutch")').removeAttr("selected",true);
-    
-  }
-  
+function setHtmlLang(lang){
+  document.getElementsByTagName('html')[0].setAttribute('lang',lang);
 }
 
-
-function loadsLanguage(lang){
-  addSelected(lang);
+function loadsLanguageText(lang){
   /*fills all the span tags with class=lang pattern*/ 
   $('span[class^="lang"]').each(function(){
-
     var LangVar = (this.className).replace('lang-','');
     var Text = window["text_"+lang][LangVar];
     $(this).text(Text);        
   });
 }
-
-function addSelected(lang){
-  var $dropdown = $("#country_select");  
-  $dropdown.find('option[value="{$lang}"]').attr("selected",true); 
   
-  $dropdown.find(!'option[value="{$lang}"]').removeAttr("selected",true);
-}
 
-
-
-function checkLocation(){
-  var country = $.get("https://ipinfo.io", function(response) {
-  console.log(response.ip, response.country);
-}, "jsonp");
-  
-}
-
-
-
+// Game logic
 
 //VARIABLES
 
@@ -93,16 +55,12 @@ win.src = "assets/sounds/win.mp3";
 
 function playMusic(i){
   let piece = getPiece();
-  
   var clips = getPieceClips(piece);
-
   var clip = new Audio();
   var index = clips[i-1].value;
-  console.log(index);
-  
+ 
   clip.src = 'assets/'+piece+'/'+index+'.mp3';
-  console.log(clip.src);
-
+ 
   if (!clip.paused) {
     clip.pause();
     clip.currentTime = 0;
@@ -112,7 +70,7 @@ function playMusic(i){
 
 
 function getPieceClips(){
-    //return array of mp3 clips
+//return array of mp3 clips
 
   var clips = [];
     for(var i=1; i<=deckLength; i ++){

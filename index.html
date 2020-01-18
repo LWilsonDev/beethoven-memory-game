@@ -14,7 +14,10 @@
   <div class="page-wrapper">
     <div class='language-choice'>
       <label for="country_select"><span class="lang-country"></span></label>
-      <select id="country_select" onchange="loadsLanguage(this.value);" class="lang-dropdown"></select>
+      <select id="country_select" class="lang-dropdown">
+        <option value='en'>English</option>
+        <option value='de'>Deutsch</option>
+      </select>
     </div>
     
     
@@ -23,7 +26,7 @@
     </header>
     <h2 class='sub-title'><span class="lang-subtitle"></span></h2>
     <label class='instructions-title' for="piece_select"><span class="lang-piece"></span></label>
-    <select id="piece_select" class="piece-dropdown">
+    <select id="piece_select" class=" select-css">
       
       
       <option value="symphony_1">Symphony No.1</option>
@@ -129,8 +132,8 @@
   </div>
   <footer>
     <div class='footer-contents'>
-      <p>This website is intended for educational purposes. All images and recordings used are in the public domain. For more information contact <a href='https://lucywilson.me/contact'>Lucy Wilson</a></p>
-      <p>&copy Lucy Wilson 2020</p>
+      <p>This website is intended for educational purposes. The recordings used were released under a Creative Commons licence and are free of known restrictions under copyright law, including all related and neighboring rights. Recordings were sourced <a href='https://musopen.org/'>here</a></p>
+      <p>&copy <a href='https://lucywilson.me/'>Lucy Wilson</a> 2020</p>
     </div> 
   </footer>
    

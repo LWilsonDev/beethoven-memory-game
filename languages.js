@@ -1,10 +1,10 @@
 var LanguageList = {
-  "EN" : "English",
-  "DEU" : "Deutsch"
+  "en" : "English",
+  "de" : "Deutsch"
 };
 
 //languages Objects
-var text_EN = {
+var text_en = {
   "country" : "Language:",
   "piece": "Choose a piece of music:",
   "subtitle" : "Music Memory",
@@ -25,7 +25,7 @@ var text_EN = {
 
 };
 
-var text_DEU = {
+var text_de = {
   "piece": "Wähle ein Musikstück:",
   "country" : "Sprache:",
   "subtitle" : "Gedächtnisspiel",
