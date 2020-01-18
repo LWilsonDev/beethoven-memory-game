@@ -94,6 +94,7 @@ I pushed the code to Github (I already had the repository as I used Github for v
 - I received inspiration for this project from
     - https://github.com/IonicaBizau/memory-blocks
     - https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript
-- I used this shuffle function: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array   
+- I used this shuffle function: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array  
+- After struggling with styling differences for my piece <select> element, I came across [this](https://www.filamentgroup.com/lab/select-css.html) and adapted it for my own use, to ensure the dropdown is styled consistently across browsers. (I'm looking at you Firefox...)  
 
 
